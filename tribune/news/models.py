@@ -24,23 +24,13 @@ class Editor(models.Model):
 
         class Meta:
             ordering = ['first_name']
-    # def update_editor():
-    #     editor = Editor.objects.filter(id).update()
-    #
-    #     return editor
-
-    # try:
-    #     editor = Editor.objects.get(email = 'pork&wedges@gmail.com')
-    #     print('Editor found')
-    # except DoesNotExist:
-    #     print('Editor was not found')
 
 class Tags(models.Model):
     name = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.name
-    
+
 class Article(models.Model):
     title = models.CharField(max_length = 60)
     post = models.TextField()
@@ -69,3 +59,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
